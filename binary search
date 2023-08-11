@@ -1,0 +1,29 @@
+#binary search using recursive function
+
+NOT_FOUND = -1
+
+def main():
+    array_list = [1, 2, 3, 5, 6, 12, 16, 18, 200, 212, 567, 999]
+    
+    n = int(input("Search: "))
+    
+    index = bin_search(array_list, n, 0, len(array_list)-1)
+    
+    if index == NOT_FOUND:
+        print("Not found")
+    else:
+        print("Found in index:", index)
+        
+def bin_search(array_list, n, start, end):
+    mid = (start+end) // 2    #integer division
+    
+    if start > end:
+        return NOT_FOUND
+    if n == array_list[mid]:
+        return mid
+    elif n < array_list[mid]:
+        return bin_search(array_list, n, start, mid- 1)
+    elif n > array_list[mid]:
+        return bin_search(array_list, n, mid + 1, end)
+        
+main()                         
