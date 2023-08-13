@@ -1,0 +1,13 @@
+#sum of digits
+
+def main():
+    num = int(input("Input integer number: "))
+    
+    print("Sum of digits:", sum_of_digits(num))
+
+def sum_of_digits(n):
+    if n % 10 == n:
+        return n
+    return (n % 10) + sum_of_digits(n // 10) #used integer division
+    
+main()        
