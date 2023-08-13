@@ -1,0 +1,14 @@
+#find factorial of N
+
+def main():
+    n = int(input("Input N for N-factorial: "))
+    
+    print(factorial(n))
+    
+def factorial(n):
+    if n < 3:
+        return n
+    else:
+        return n * factorial(n-1)
+    
+main()        
