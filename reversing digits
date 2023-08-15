@@ -1,0 +1,18 @@
+#reversing digits
+
+def main():
+    
+    digits = int(input("Input integer digists: "))
+    print("Reversed digits:",reverse_digits(digits, 0))
+    
+def reverse_digits(digits, new_digits):
+    #Base case: Single digit left
+    
+    if digits % 10 == digits:     #Alternative condition: digits < 10 
+        return new_digits + digits
+    else:
+        remainder = digits % 10
+        new_digits = (new_digits + remainder) * 10
+        return reverse_digits(digits // 10, new_digits)
+    
+main()        
