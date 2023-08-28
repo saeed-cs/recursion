@@ -1,0 +1,21 @@
+#finding if an array is sorted in ascending order
+
+def main():
+    array_list = input("Input space-separated integers: ")
+    array = list(map(int, array_list.split())) #converting the input string into a list of integers
+    
+    if is_sorted(array, 0, len(array)-1):
+        print("Sorted")
+    else:
+        print("Not sorted")
+        
+def is_sorted(array, start, end):
+    if start == end:
+        return True
+    
+    if array[start] <= array[start+1]:
+        return is_sorted(array, start+1, end)
+    else:
+        return False
+    
+main()    
